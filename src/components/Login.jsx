@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { toast } from "react-toastify";
 //import Button from "../../components/Button";
 
 import axios, { AxiosError } from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 // import { Link, useNavigate } from "react-router-dom";
 
 const baseUrl = "https://help.pplrepairshub.co.uk";
+
 
 const Login = () => {
 	const [formData, setFormData] = useState({
@@ -15,7 +17,9 @@ const Login = () => {
 		password: "",
 	});
 
-	// const navigate = useNavigate();
+	const { setUser } = useContext(AuthContext);
+
+	const navigate = useNavigate();
 	const handleChange = (e) => {
 		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
@@ -36,8 +40,11 @@ const Login = () => {
 			const responsePost = await api.post(`${baseUrl}/login`, postData);
 			if (responsePost.status === 200) {
 				localStorage.setItem("authToken", responsePost.data.token);
+				console.log(responsePost.data.firstname)
+				setUser(responsePost.data.firstname);
 				toast.success("Successfully logged in");
-				setTimeout(() => (window.location.href = "/"), 800);
+				navigate("/");
+				// setTimeout(() => (window.location.href = "/"), 800);
 			}
 		} catch (e) {
 			if (e instanceof AxiosError) {

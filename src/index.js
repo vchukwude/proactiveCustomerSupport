@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import "./index.css";
 import App from "./App";
+import AuthProvider from "./context/AuthContext";
 
 // const router = createBrowserRouter([
 // 	{
@@ -35,10 +36,12 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<Layout>
+		<AuthProvider>
 			<BrowserRouter>
-				<App />
+				<Layout>
+					<App />
+				</Layout>
 			</BrowserRouter>
-		</Layout>
+		</AuthProvider>
 	</React.StrictMode>
 );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,12 +6,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import axios, { AxiosError } from "axios";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 // import { Link, useNavigate } from "react-router-dom";
 
 const baseUrl = "https://help.pplrepairshub.co.uk";
 
 const Signup = () => {
 	// const navigate = useNavigate();
+	const { setUser } = useContext(AuthContext);
 	const [formData, setFormData] = useState({
 		username: "",
 		email: "",
@@ -42,7 +44,7 @@ const Signup = () => {
 			const responsePost = await api.post(`${baseUrl}/register`, postData);
 			if (responsePost.status === 200) {
 				localStorage.setItem("authToken", responsePost.data.token);
-
+				setUser(responsePost.data.firstname);
 				toast.success("Successfully registered");
 				setTimeout(() => (window.location.href = "/"), 800);
 			}
