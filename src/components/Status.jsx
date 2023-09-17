@@ -8,7 +8,7 @@ const Status = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [option, setOption] = useState("AllData");
 
-	const baseUrl = "https://help.pplrepairshub.co.uk";
+	const baseUrl = "https://www.pplrepairshub.co.uk";
 
 	useEffect(() => {
 		const fetchData = async () => {

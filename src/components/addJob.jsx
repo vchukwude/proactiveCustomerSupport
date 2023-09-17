@@ -37,7 +37,7 @@ const AddJob = ({ toggleModal }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isCopied, setIsCopied] = useState(false);
 
-	const baseUrl = "https://help.pplrepairshub.co.uk";
+	const baseUrl = "https://www.pplrepairshub.co.uk";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 const Header = () => {
 	const token = localStorage.getItem("authToken");
 	const { user, setUser } = useContext(AuthContext);
+
+	
 	const signOut = () => {
 		localStorage.removeItem("authToken");
 		setUser("");
 		window.location.href = "/";
 	};
 
-	console.log("user")
+
 	return (
 		<header className='border-b border-gray-100'>
 			<nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800'>

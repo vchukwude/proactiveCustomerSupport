@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 // import { Link, useNavigate } from "react-router-dom";
 
-const baseUrl = "https://help.pplrepairshub.co.uk";
+const baseUrl = "https://www.pplrepairshub.co.uk";
 
 
 const Login = () => {
@@ -42,9 +42,10 @@ const Login = () => {
 				localStorage.setItem("authToken", responsePost.data.token);
 				console.log(responsePost.data.firstname)
 				setUser(responsePost.data.firstname);
+				localStorage.setItem('username',responsePost.data.firstname)
 				toast.success("Successfully logged in");
-				navigate("/");
-				// setTimeout(() => (window.location.href = "/"), 800);
+				// navigate("/");
+				setTimeout(() => (window.location.href = "/"), 800);
 			}
 		} catch (e) {
 			if (e instanceof AxiosError) {
