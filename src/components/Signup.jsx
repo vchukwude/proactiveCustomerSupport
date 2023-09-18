@@ -61,12 +61,12 @@ const Signup = () => {
 		<div className='max-w-[600px] w-11/12 mx-auto'>
 
 			<h3 className='font-bold text-3xl text-center mt-6'>Staff Registeration</h3>
-			<p className='text-center '>
+			{/* <p className='text-center '>
 				Already a member?{" "}
 				<Link to='/login' className='underline text-indigo-400'>
 					Login
 				</Link>
-			</p>
+			</p> */}
 
 			<div className='w-11/12 mx-auto bg-white shadow-sm rounded-lg  p-8 border border-gray-100 mt-10'>
 				<form className='md:w-11/12 max-w-[500px] mx-auto'>
