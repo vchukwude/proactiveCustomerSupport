@@ -45,6 +45,7 @@ const Signup = () => {
 			if (responsePost.status === 200) {
 				localStorage.setItem("authToken", responsePost.data.token);
 				setUser(responsePost.data.firstname);
+				localStorage.setItem('username',responsePost.data.firstname)
 				toast.success("Successfully registered");
 				setTimeout(() => (window.location.href = "/"), 800);
 			}
