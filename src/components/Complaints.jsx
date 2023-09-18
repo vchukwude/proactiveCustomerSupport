@@ -8,7 +8,7 @@ const Complaints = () => {
 	const [results, setResults] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 
-	const baseUrl = "https://www.pplrepairshub.co.uk";
+	const baseUrl = "https://help.pplrepairshub.co.uk";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
