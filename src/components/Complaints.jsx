@@ -47,7 +47,7 @@ const Complaints = () => {
 		<div className='w-11/12 max-w-[1200px] mx-auto'>
 			<div className='h-[100px] w-full lg:w-6/12 my-10 shadow-lg mx-auto rounded-lg bg-indigo-500 flex items-center justify-center'>
 				<h1 className='text-lg text-white md:text-3xl font-bold text-center'>
-					Complaints Diagnostics
+				Predictor
 				</h1>
 			</div>
 			<div className='mt-10 mx-auto p-8 rounded-lg  w-full lg:w-6/12  shadow-sm border border-gray-100'>
@@ -81,13 +81,13 @@ const Complaints = () => {
 						/>
 						<button
 							type='submit'
-							className='text-white absolute right-2.5 bottom-2.5 bg-indigo-500 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-500 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800'
+							className='text-white flex absolute right-2.5 bottom-2.5 bg-indigo-500 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-indigo-500 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800'
 						>
 							{" "}
 							{isLoading ? (
 								<Loader2 className='mr-2 h-4 w-4 animate-spin' />
 							) : null}
-							Diagnose
+							Predict
 						</button>
 					</div>
 				</form>
